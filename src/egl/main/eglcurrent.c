@@ -74,6 +74,7 @@ static inline void _eglFiniTSD(void)
 
       _egl_TSDInitialized = EGL_FALSE;
       _eglDestroyThreadInfo(t);
+      _eglSetTSD(NULL);
       tss_delete(_egl_TSD);
    }
    mtx_unlock(&_egl_TSDMutex);
